@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="./normalize.css" />
+		<style>
+			html,
+			body {
+				text-align: center;
+				height: 100%;
+				width: 100%;
+			}
+			.hidden {
+				display: none !important;
+			}
+			.background-image {
+				height: 100%;
+				width: 100%;
+				z-index: -1;
+			}
+			.stage {
+				width: 100%;
+				height: 100%;
+			}
+			.info-text {
+				height: 20%;
+			}
+			.info-content {
+				height: 80%;
+			}
+			.avatar {
+				height: 150px;
+			}
+			.stage0_avatar {
+				position: absolute;
+				bottom: 50px;
+				left: 90px;
+			}
+			.stage3_avatar {
+				position: absolute;
+				bottom: 230px;
+				left: 300px;
+			}
+			.stage6_avatar {
+				position: absolute;
+				bottom: 250px;
+				left: 450px;
+			}
+			button {
+				padding: 1em;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="stage stage0 hidden">
+			<img class="avatar stage0_avatar" src="./sprite.jpeg" />
+			<img class="background-image" src="./pathway.png" />
+		</div>
+		<div class="stage stage1 hidden">
+			<h1 class="info-text">How did vowels change?</h1>
+			<h2 class="info-content">
+				The changes happened in 8 steps. These are the changes that
+				happened:<br /><br />
+				Phase 1:<br />
+				1. i and u drop and become ǝI and ǝU<br />
+				Vowels in "beet" and "ooht" (not a word) became "bite" and
+				"out"<br /><br />
+				2. e and o move up, becoming i and u<br />
+				Vowels in "meat" and "boht" (not a word) became "meet" and
+				"boot" <br /><br /><br />
+				Phase 2:<br />
+				3. a moves forward to æ<br />
+				Vowels in "maht" (not a word) became "met"<br /><br />
+				4. Ɛ becomes e, ɔ becomes o<br />
+				Vowels in "m-air-t" (not a word) and "b-O-t" became "meat" and
+				"boat"<br /><br />
+				5. æ moves up to Ɛ<br />
+				Vowels in "maht" (not a word) became "met"
+			</h2>
+		</div>
+		<div class="stage stage2 hidden">
+			<h1 class="info-text">
+				Quiz<br /><br />What is the most accepted theory of why the
+				Great Vowel Shift happened?
+			</h1>
+			<h1
+				class="info-content"
+				style="display: flex; flex-direction: column; row-gap: 1em"
+			>
+				<button>a. The Spanish invaded the French people</button>
+				<button class="correct correct-0">
+					b. The rapid migration of people after the Black Death
+					caused a clash of dialects
+				</button>
+				<button>
+					c. Respect for pronounciations of the middle class French
+					caused an unintentional shift
+				</button>
+			</h1>
+		</div>
+		<div class="stage stage3 hidden">
+			<img class="avatar stage3_avatar" src="./sprite.jpeg" />
+			<img class="background-image" src="./pathway.png" />
+		</div>
+		<div class="stage stage4 hidden">
+			<h1 class="info-text">How did vowels change?</h1>
+			<h2 class="info-content">
+				Later on:<br /><br />6. e moves up to i<br />A new e was created
+				in step 4; now that e moves up to i<br />Vowels in "mate" move
+				up to "meat"<br /><br />7. Ɛ moves up to e<br />The new Ɛ
+				created in step 5 now moves up<br />Vowels in "met" move up to
+				"mate"<br /><br />8. ǝI and ǝU drop to aI and aU
+			</h2>
+		</div>
+		<div class="stage stage5 hidden">
+			<h1 class="info-text">Quiz<br /><br />When did the GVS occur?</h1>
+			<h1
+				class="info-content"
+				style="display: flex; flex-direction: column; row-gap: 1em"
+			>
+				<button>a. Mainly during the 13th-14th centuries</button>
+				<button>
+					b. From the 12th century to the 18th century, but mainly
+					during the 14th to 15th centuries
+				</button>
+				<button class="correct correct-1">
+					c. From the 12th century to the 18th century, but mainly
+					during the 15th to 16th centuries
+				</button>
+			</h1>
+		</div>
+		<div class="stage stage6 hidden">
+			<img class="avatar stage6_avatar" src="./sprite.jpeg" />
+			<img class="background-image" src="./pathway.png" />
+		</div>
+		<div class="stage stage7 hidden">
+			<h1 class="info-text">What does it mean to be shifted up?</h1>
+			<h2 class="info-content">
+				Vowel that used to be pronounced in one part of mouth is now
+				pronounced in different place, higher up. Try saying: "boot".
+				Feel how it is in the back of your mouth, in the throat. Then,
+				say "meat". Feel how it is in the front of your mouth, like it
+				falling off of your tongue. To be shifted upwards is to move
+				fowards in your mouth
+			</h2>
+		</div>
+		<div class="stage stage8 hidden">
+			<h1 class="info-text">
+				Quiz<br /><br />What were the first four vowels to change?
+			</h1>
+			<h1
+				class="info-content"
+				style="display: flex; flex-direction: column; row-gap: 1em"
+			>
+				<button class="correct correct-2">a. i, e, u, and o</button>
+				<button>b. a, e, u, and o</button>
+				<button>c. a, e, i, and o</button>
+			</h1>
+		</div>
+		<script>
+			const params = new URLSearchParams(window.location.search);
+			const stage = parseInt(params.get('stage'));
+			const correct = parseInt(params.get('correct'));
+			if (stage === 0) {
+				document.querySelector('.stage0').classList.remove('hidden');
+			} else if (stage === 1) {
+				document.querySelector('.stage1').classList.remove('hidden');
+			} else if (stage === 2) {
+				document.querySelector('.stage2').classList.remove('hidden');
+			} else if (stage === 3) {
+				document.querySelector('.stage3').classList.remove('hidden');
+			} else if (stage === 4) {
+				document.querySelector('.stage4').classList.remove('hidden');
+			} else if (stage === 5) {
+				document.querySelector('.stage5').classList.remove('hidden');
+			} else if (stage === 6) {
+				document.querySelector('.stage6').classList.remove('hidden');
+			} else if (stage === 7) {
+				document.querySelector('.stage7').classList.remove('hidden');
+			} else if (stage === 8) {
+				document.querySelector('.stage8').classList.remove('hidden');
+			} else if (stage === 9) {
+				window.location.href = `/done.html?correct=${correct}`;
+			}
+			Array.from(document.getElementsByTagName('button')).forEach(
+				(btn, i) => {
+					btn.onclick = async () => {
+						console.log(btn.classList);
+						if (btn.classList.contains('correct')) {
+							btn.style.backgroundColor = 'green';
+							await new Promise((resolve) => {
+								setTimeout(() => {
+									resolve();
+								}, 2000);
+							});
+							window.location.href = `./game.html?stage=${
+								stage + 1
+							}&correct=${correct + 1}`;
+						} else {
+							console.log(i);
+							btn.style.backgroundColor = 'red';
+							if (i === 0 || i === 1 || i === 2) {
+								document.getElementsByClassName(
+									'correct-0',
+								)[0].style.backgroundColor = 'green';
+							} else if (i === 3 || i === 4 || i === 5) {
+								document.getElementsByClassName(
+									'correct-1',
+								)[0].style.backgroundColor = 'green';
+							} else if (i === 6 || i === 7 || i === 8) {
+								document.getElementsByClassName(
+									'correct-2',
+								)[0].style.backgroundColor = 'green';
+							}
+							await new Promise((resolve) => {
+								setTimeout(() => {
+									resolve();
+								}, 2000);
+							});
+							window.location.href = `./game.html?stage=${
+								stage + 1
+							}&correct=${correct}`;
+						}
+					};
+				},
+			);
+			document.onkeydown = function (e) {
+				if (e.keyCode === 39) {
+					window.location.href = `/game.html?stage=${
+						stage + 1
+					}&correct=${correct}`;
+				}
+			};
+		</script>
+	</body>
+</html>

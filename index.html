@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="./normalize.css" />
+		<style>
+			html,
+			body {
+				display: flex;
+				color: skyblue;
+				width: 100%;
+				height: 100%;
+			}
+			.img {
+				width: 100%;
+				height: 100%;
+			}
+			.text {
+				width: 100%;
+				align-self: center;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<img
+			class="img"
+			src="./title.png"
+			style="position: absolute; z-index: -1"
+		/>
+		<div class="text">
+			<div>
+				<h1>The Great Vowel Shift</h1>
+				<h3>Alan Chen</h3>
+			</div>
+			<h3>Press the right arrow to go to the next page</h3>
+		</div>
+		<script>
+			document.onkeydown = function (e) {
+				if (e.keyCode === 39) {
+					window.location.href = './slide.html?page=1';
+				}
+			};
+		</script>
+	</body>
+</html>

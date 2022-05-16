@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="./normalize.css" />
+		<style>
+			html,
+			body {
+				text-align: center;
+				height: 100%;
+				width: 100%;
+			}
+			.hidden {
+				display: none !important;
+			}
+			.title {
+				align-self: center;
+			}
+			.left {
+				background-color: #4e4c4c;
+				width: 40%;
+				margin-right: 1em;
+				color: skyblue;
+				display: flex;
+				height: 100%;
+				justify-content: center;
+			}
+			.slide-text {
+				height: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding-left: 5em;
+				padding-right: 5em;
+			}
+			.right {
+				width: 60%;
+			}
+			.slide {
+				display: flex;
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="slide slide1 hidden">
+			<div class="left">
+				<h1 class="title">What is the Great Vowel Shift?</h1>
+			</div>
+			<div class="right">
+				<h2 class="slide-text">
+					The Great Vowel Shift is a series of changes affecting the
+					pronounciation of the long vowels in English. It began in
+					the 12th century and ended in the 18th century, but the main
+					changes happened in the 15th to 16th centuries.
+				</h2>
+			</div>
+		</div>
+		<div class="slide slide2 hidden">
+			<div class="left">
+				<h1 class="title">Causes</h1>
+			</div>
+			<div class="right">
+				<h2 class="slide-text">
+					There cause of the GVS is heavily debated<br /><br />Theory
+					1: The most accepted theory relates to the rapid migration
+					of people after the Black Death. People moved from southeast
+					of England to the East Midlands of England and the Central
+					Midlands of England, which caused a clash of dialects.
+					<br /><br />Theory 2: The second theory is that many French
+					words were adopted without modification. (loan words)<br /><br />Theory
+					3: The third theory is that French pronounciations in the
+					middle classes were more well respected so the shift may
+					have unintentionally started from vowel pronounciations that
+					inaccurately imitated French pronounciations
+				</h2>
+			</div>
+		</div>
+		<div class="slide slide3 hidden">
+			<div class="left">
+				<h1 class="title">Discoverer</h1>
+			</div>
+			<div class="right">
+				<h2 class="slide-text">
+					Otto Jesperson is known as the "Discoverer" of the GVS. He
+					is a Danish linguist
+				</h2>
+			</div>
+		</div>
+		<script>
+			const params = new URLSearchParams(window.location.search);
+			const page = parseInt(params.get('page'));
+			if (page === 1) {
+				document.querySelector('.slide1').classList.remove('hidden');
+			} else if (page === 2) {
+				document.querySelector('.slide2').classList.remove('hidden');
+			} else if (page === 3) {
+				document.querySelector('.slide3').classList.remove('hidden');
+			}
+			document.onkeydown = function (e) {
+				if (e.keyCode === 39) {
+					if (page === 3) {
+						window.location.href = './game.html?stage=0&correct=0';
+					} else {
+						window.location.href = `./slide.html?page=${page + 1}`;
+					}
+				}
+			};
+		</script>
+	</body>
+</html>
