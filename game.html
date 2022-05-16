@@ -227,12 +227,11 @@
 					};
 				},
 			);
-			document.onkeydown = function (e) {
-				if (e.keyCode === 39) {
-					window.location.href = `/game.html?stage=${
-						stage + 1
-					}&correct=${correct}`;
-				}
+			document.onclick = async () => {
+				if (stage === 2 || stage === 5 || stage === 8) return;
+				window.location.href = `/game.html?stage=${
+					stage + 1
+				}&correct=${correct}`;
 			};
 		</script>
 	</body>

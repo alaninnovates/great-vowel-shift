@@ -101,13 +101,11 @@
 			} else if (page === 3) {
 				document.querySelector('.slide3').classList.remove('hidden');
 			}
-			document.onkeydown = function (e) {
-				if (e.keyCode === 39) {
-					if (page === 3) {
-						window.location.href = './game.html?stage=0&correct=0';
-					} else {
-						window.location.href = `./slide.html?page=${page + 1}`;
-					}
+			document.onclick = () => {
+				if (page === 3) {
+					window.location.href = './game.html?stage=0&correct=0';
+				} else {
+					window.location.href = `./slide.html?page=${page + 1}`;
 				}
 			};
 		</script>

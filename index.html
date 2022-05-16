@@ -36,13 +36,11 @@
 				<h1>The Great Vowel Shift</h1>
 				<h3>Alan Chen</h3>
 			</div>
-			<h3>Press the right arrow to go to the next page</h3>
+			<h3>Click anywhere to go to the next page</h3>
 		</div>
 		<script>
-			document.onkeydown = function (e) {
-				if (e.keyCode === 39) {
-					window.location.href = './slide.html?page=1';
-				}
+			document.onclick = () => {
+				window.location.href = './slide.html?page=1';
 			};
 		</script>
 	</body>
